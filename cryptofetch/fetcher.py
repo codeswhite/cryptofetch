@@ -13,13 +13,16 @@ API_USAGE_CAP = 10
 
 
 def _cval(val: float, colorize: bool, suffix: str = '') -> str:
-    col = 'white'
+    col = None
     if colorize:
         if val > 0:
             col = 'green'
         elif val < 0:
             col = 'red'
-    return colored('%.3f%s' % (val, suffix), col)
+    s = '%.3f%s' % (val, suffix)
+    if not col:
+        return s
+    return colored(s, col)
 
 
 def _api_request(market, pair) -> (dict, None):
