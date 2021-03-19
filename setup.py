@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="cryptofetch",
-    version="1.2.1",
+    version="1.2.2",
     description="CLI tool to fetch and view cryptocurrencies prices",
     url="https://github.com/codeswhite/cryptofetch",
     classifiers=[
