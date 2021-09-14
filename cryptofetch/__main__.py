@@ -47,7 +47,10 @@ def _check_def(d):
 
 def menu(args, definitions) -> int:
     auto_mode = args.automode
-    auto_time = min(0.1, args.automode_time)
+    auto_time = 0.5
+    if args.automode_time:
+        auto_time = max(0.5, args.automode_time)
+        pr(f'Using Auto-mode time delay: {auto_time}', '*')
     while 1:
         try:
             fetch_definitions(args, definitions)
